@@ -1,38 +1,142 @@
-.App {
-  text-align: center;
+html {
+  padding: 0px;
+  margin: 0px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.background-image {
+  width: 100%;
+  height: 100vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.background-blur {
+  position: absolute;
+  top: 0px;
+  background: linear-gradient(
+    180deg,
+    rgba(14, 14, 35, 0.9) 0%,
+    rgba(38, 38, 38, 0.7) 100%
+  );
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.background-header {
+  cursor: none;
+  position: absolute;
+  font-family: "Rochester";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 140px;
+  line-height: 180px;
+  left: 30%;
+  top: 0;
+  color: #f1f1f1;
+}
+
+.background-header-2 {
+  position: absolute;
+  left: 27%;
+  top: 45%;
+
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 50px;
+  line-height: 75px;
+
+  color: #ffffff;
+}
+
+.underline {
+  border-bottom-color: #f1f1f1;
+}
+
+.navbar {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 70px;
+
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-around;
+
+  font-family: "Poppins";
+  color: #f3f3f3;
+  z-index: 5;
+  /* background: red; */
 }
 
-.App-link {
-  color: #61dafb;
+.navbar-list {
+  font-size: 15px;
+  width: 300px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.logo {
+  font-size: 30px;
+  font-family: "Rochester";
+}
+
+.search {
+  width: 20%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.content-search {
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 27px;
+
+  color: #999999;
+}
+
+.profile-circle-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 75px;
+}
+
+.profile-circle-arrow {
+  width: 15px;
+}
+
+.section2-container {
+  background-color: #2c2c2c;
+  width: 100%;
+  height: 100vh;
+}
+
+.section2-header {
+  position: absolute;
+  margin-left: 75px;
+  margin-top: 75px;
+  font-family: Poppins;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 40px;
+
+  color: #f1f1f1;
+}
+
+.categories {
+  position: absolute;
+  margin-top: 175px;
+  margin-left: 50px;
+  width: 90%;
+}
+
+.category {
+  padding: 25px;
+}
+
+.section3-container {
+  width: 100%;
+  height: 100vh;
 }
