@@ -8,21 +8,29 @@ import "../swiper.css";
 function Section3() {
   return (
     <div className="section3-container">
-      <Swiper
-        modules={[Navigation, Pagination, Scrollbar, A11y, Grid]}
-        spaceBetween={0}
-        slidesPerView={3}
-        grid={{ rows: 3 }}
-        navigation
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log("slide change")}
-      >
-        {cat.map((c) => (
-          <SwiperSlide>
-            <Category2 />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <div className="section3-header">Some Of Our Clients</div>
+      <div className="section3-swiper">
+        <Swiper
+          modules={[Navigation, Pagination, Scrollbar, A11y, Grid]}
+          spaceBetween={0}
+          slidesPerView={3}
+          grid={{ rows: 2, fill: "row" }}
+          pagination={{
+            clickable: true,
+            dynamicBullets: true,
+            el: "span"
+          }}
+          onSwiper={(swiper) => console.log(swiper)}
+          onSlideChange={() => console.log("slide change")}
+        >
+          {cat.map((c) => (
+            <SwiperSlide>
+              <Category2 />
+            </SwiperSlide>
+          ))}
+          <span className="bullets"></span>
+        </Swiper>
+      </div>
     </div>
   );
 }
