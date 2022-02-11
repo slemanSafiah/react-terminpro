@@ -8,23 +8,21 @@ import Paper from "@mui/material/Paper";
 function Category2() {
   return (
     <div className="category">
-      <Paper elevation={12}>
-        <Card sx={{ maxWidth: 345 }}>
-          <CardActionArea>
-            <CardMedia
-              component="img"
-              height="140"
-              image="./images/back-1.png"
-              alt="green iguana"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="div">
-                Lizard
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        </Card>
-      </Paper>
+      <Card sx={{ maxWidth: 200 }}>
+        <CardActionArea>
+          <CardMedia
+            component="img"
+            height="100"
+            image="./images/back-1.png"
+            alt="green iguana"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="body1" component="div">
+              Lizard
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+      </Card>
     </div>
   );
 }
