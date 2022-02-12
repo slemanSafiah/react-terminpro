@@ -1,4 +1,3 @@
-import ScrollAnimation from "react-animate-on-scroll";
 import Category from "./Category";
 import Background from "./images/back-2.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -34,12 +33,10 @@ function Section2() {
         alt="background"
         className="background-image-section2"
       />
-
       <div className="section2-header">
         Top Categories . . .
         <Divider sx={{ backgroundColor: "#f1f1f1" }} variant="fullWidth" />
       </div>
-
       <div className="categories">
         <Swiper
           modules={[
