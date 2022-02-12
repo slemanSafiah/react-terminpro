@@ -34,41 +34,35 @@ function Section2() {
         alt="background"
         className="background-image-section2"
       />
-      <ScrollAnimation
-        animateIn="fadeIn"
-        // animateOut="fadeOut"
-        duration={1}
-        delay={0}
-      >
-        <div className="section2-header">
-          Top Categories . . .
-          <Divider sx={{ backgroundColor: "#f1f1f1" }} variant="fullWidth" />
-        </div>
 
-        <div className="categories">
-          <Swiper
-            modules={[
-              Navigation,
-              Pagination,
-              Scrollbar,
-              A11y,
-              EffectFade,
-              EffectCoverflow
-            ]}
-            spaceBetween={15}
-            slidesPerView={3}
-            navigation
-            effect="coverflow"
-            coverflowEffect={{ slideShadows: false, depth: 50 }}
-            onSwiper={(swiper) => console.log(swiper)}
-            onSlideChange={() => console.log("slide change")}
-          >
-            {categories.map((cat) => (
-              <SwiperSlide>{<Category />}</SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </ScrollAnimation>
+      <div className="section2-header">
+        Top Categories . . .
+        <Divider sx={{ backgroundColor: "#f1f1f1" }} variant="fullWidth" />
+      </div>
+
+      <div className="categories">
+        <Swiper
+          modules={[
+            Navigation,
+            Pagination,
+            Scrollbar,
+            A11y,
+            EffectFade,
+            EffectCoverflow
+          ]}
+          spaceBetween={15}
+          slidesPerView={3}
+          navigation
+          effect="coverflow"
+          coverflowEffect={{ slideShadows: false, depth: 50 }}
+          onSwiper={(swiper) => console.log(swiper)}
+          onSlideChange={() => console.log("slide change")}
+        >
+          {categories.map((cat) => (
+            <SwiperSlide>{<Category />}</SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </div>
   );
 }
