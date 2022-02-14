@@ -90,6 +90,17 @@
 }
 
 .form-stepper {
-  width: 900px;
+  position: relative;
+  width: 1000px;
   height: 400px;
+  padding: 20px;
+  border: #aeaeae 1px solid;
+  border-radius: 10px;
+}
+
+.button-group {
+  position: absolute;
+  padding: 10px;
+  right: 0px;
+  bottom: 0px;
 }
