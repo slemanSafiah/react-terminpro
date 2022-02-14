@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Navigator } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Stepper, Button, ButtonGroup, Step, StepLabel } from "@mui/material";
 import Step1 from "./steps/Step1";
 import Step2 from "./steps/Step2";
@@ -13,7 +13,7 @@ function Register() {
     "Step 2 : provide your information ",
     "Step 3 : type your password"
   ];
-  const hist = Navigator();
+  const hist = useNavigate();
   const [activeStep, setActiveStep] = useState(0);
 
   const handleNext = () => {
@@ -59,7 +59,7 @@ function Register() {
         {renderStep()}
         <div className="button-group">
           <ButtonGroup variant="outlined">
-            {activeStep === 3 ? (
+            {activeStep !== 3 ? (
               <>
                 <Button onClick={handleBack}>Back</Button>
                 <Button onClick={handleNext}>Next</Button>

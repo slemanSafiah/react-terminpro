@@ -33,10 +33,7 @@ function Section2() {
         alt="background"
         className="background-image-section2"
       />
-      <div className="section2-header">
-        Top Categories . . .
-        <Divider sx={{ backgroundColor: "#f1f1f1" }} variant="fullWidth" />
-      </div>
+      <div className="section2-header">Top Categories . . .</div>
       <div className="categories">
         <Swiper
           modules={[

@@ -128,7 +128,7 @@ html {
   position: absolute;
   margin-left: 75px;
   margin-top: 75px;
-  font-family: Poppins;
+  font-family: "Rochester";
   font-style: normal;
   font-weight: 500;
   font-size: 40px;
@@ -156,7 +156,7 @@ html {
 .section3-header {
   padding-top: 30px;
   font-size: 40px;
-  font-family: Poppins;
+  font-family: "Rochester";
 }
 
 .section3-swiper {
@@ -230,14 +230,14 @@ html {
   margin-top: 10px;
 }
 
-.btn1 {
+.btn1-google {
   width: 150px;
   position: absolute;
   margin-top: 5%;
   margin-left: 60px;
 }
 
-.btn2 {
+.btn2-apple {
   width: 150px;
   position: absolute;
   margin-top: 10%;

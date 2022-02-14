@@ -51,10 +51,10 @@ function Footer() {
         </div>
 
         <div className="footer-sec3">
-          <Button variant="contained" color="secondary" className="btn1">
+          <Button variant="contained" color="secondary" className="btn1-google">
             Download <Google className="icon" />
           </Button>
-          <Button variant="outlined" color="secondary" className="btn2">
+          <Button variant="outlined" color="secondary" className="btn2-apple">
             Download <Apple className="icon" />
           </Button>
         </div>
