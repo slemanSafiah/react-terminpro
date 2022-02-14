@@ -1,6 +1,8 @@
 import Search from "./Search";
 import ProfileCircle from "./ProfileCircle";
 import NavOptions from "./NavOptions";
+import { Link } from "react-router-dom";
+import "../../../App.css";
 
 function NavBar() {
   return (
@@ -12,8 +14,17 @@ function NavBar() {
         <ProfileCircle />
       ) : (
         <ul className="login-menu">
-          <li> login</li>
-          <li> register</li>
+          <li>
+            <Link to="/login" className="route">
+              login
+            </Link>
+          </li>
+          <li>
+            {" "}
+            <Link to="/register" className="route">
+              register
+            </Link>
+          </li>
         </ul>
       )}
     </div>

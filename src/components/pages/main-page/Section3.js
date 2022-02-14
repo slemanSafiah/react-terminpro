@@ -3,7 +3,7 @@ import Category2 from "./Category2";
 import { Navigation, Pagination, Scrollbar, A11y, Grid } from "swiper";
 import cat from "./dummy";
 
-import "../swiper.css";
+import "../../../swiper.css";
 
 function Section3() {
   return (

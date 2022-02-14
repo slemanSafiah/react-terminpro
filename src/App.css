@@ -62,7 +62,7 @@ html {
 }
 
 .login-menu {
-  width: 100px;
+  width: 130px;
   list-style: none;
   display: flex;
   justify-content: space-between;
@@ -246,4 +246,14 @@ html {
 
 .icon {
   margin-left: 10px;
+}
+
+.route {
+  text-decoration: none;
+  color: #d0d0d0;
+}
+
+.route:hover {
+  color: #f1f1f1;
+  transition: 500ms ease-in-out;
 }

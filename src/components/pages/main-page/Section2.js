@@ -11,7 +11,7 @@ import {
 } from "swiper";
 import Divider from "@mui/material/Divider";
 
-import "../swiper.css";
+import "../../../swiper.css";
 import "animate.css/animate.min.css";
 
 function Section2() {

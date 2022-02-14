@@ -1,5 +1,5 @@
 import background from "./images/back-1.png";
-import "../App.css";
+import "../../../App.css";
 
 function Section1() {
   return (
