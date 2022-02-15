@@ -29,6 +29,8 @@ html {
   left: 30%;
   top: 0;
   color: #f1f1f1;
+  animation-duration: 2s;
+  animation-name: fade;
 }
 
 .background-header-2 {
@@ -41,7 +43,8 @@ html {
   font-weight: normal;
   font-size: 50px;
   line-height: 75px;
-
+  animation-duration: 3s;
+  animation-name: fade;
   color: #ffffff;
 }
 
@@ -155,7 +158,7 @@ html {
 
 .section3-header {
   padding-top: 30px;
-  font-size: 40px;
+  font-size: 60px;
   font-family: "Rochester";
 }
 
@@ -170,7 +173,8 @@ html {
 }
 
 .category2 {
-  padding: 40px;
+  margin-top: 30px;
+  padding: 20px;
 }
 
 .footer-container {
@@ -255,5 +259,16 @@ html {
 
 .route:hover {
   color: #f1f1f1;
+  font-size: 19px !important;
   transition: 500ms ease-in-out;
+}
+
+@keyframes fade {
+  0% {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

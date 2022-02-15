@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import background from "./images/login.jpg";
 import { Stepper, Button, ButtonGroup, Step, StepLabel } from "@mui/material";
 import Step1 from "./steps/Step1";
 import Step2 from "./steps/Step2";
 import Step3 from "./steps/Step3";
+import Step4 from "./steps/Step4";
 
 import "./style.css";
 
@@ -21,7 +23,10 @@ function Register() {
   };
 
   const handleBack = () => {
-    setActiveStep((prevStep) => prevStep - 1);
+    if (activeStep === 0) hist("/");
+    else {
+      setActiveStep((prevStep) => prevStep - 1);
+    }
   };
 
   const handleSubmit = () => {
@@ -39,6 +44,9 @@ function Register() {
       case 2: {
         return <Step3 />;
       }
+      case 3: {
+        return <Step4 />;
+      }
       default:
         break;
     }
@@ -46,7 +54,9 @@ function Register() {
 
   return (
     <div className="register-page">
+      <img src={background} className="background" alt="" background />
       <div className="form-stepper">
+        <div className="form-stepper-background" />
         <Stepper activeStep={activeStep} alternativeLabel>
           {steps.map((label, index) => {
             return (
