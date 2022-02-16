@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useAuth } from "../../../context/userContext";
 import {
   Avatar,
   Tooltip,
@@ -10,6 +11,7 @@ import {
 import { Settings, Logout } from "@mui/icons-material";
 
 function ProfileCircle() {
+  const { logout } = useAuth();
   const [anchorEl, setAnchorEl] = useState(null);
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
@@ -18,6 +20,10 @@ function ProfileCircle() {
   };
   const handleClose = () => {
     setAnchorEl(null);
+  };
+
+  const handleLogout = async () => {
+    await logout();
   };
 
   return (
@@ -79,7 +85,7 @@ function ProfileCircle() {
           </ListItemIcon>
           Settings
         </MenuItem>
-        <MenuItem>
+        <MenuItem onClick={handleLogout}>
           <ListItemIcon>
             <Logout />
           </ListItemIcon>

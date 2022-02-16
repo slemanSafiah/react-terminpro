@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { forwardRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/userContext";
+import MuiAlert from "@mui/material/Alert";
 import background from "./images/login.jpg";
 import {
   Box,
@@ -9,18 +11,39 @@ import {
   FormHelperText,
   FormControl,
   InputAdornment,
-  IconButton
+  IconButton,
+  Snackbar
 } from "@mui/material";
 import { Visibility, VisibilityOff, ArrowBack } from "@mui/icons-material";
 import "./style.css";
 
 function Login() {
+  const Alert = forwardRef(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+  });
+
+  const [open, setOpen] = useState(false);
+
   const [values, setValues] = useState({
     email: "",
     password: "",
     showPassword: false
   });
   const hist = useNavigate();
+
+  const { login } = useAuth();
+
+  const handleClick = () => {
+    setOpen(true);
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
 
   const handleChange = (props) => (event) => {
     setValues({
@@ -40,14 +63,19 @@ function Login() {
     event.preventDefault();
   };
 
-  const handleSubmit = (event) => {
-    console.log(values.email, values.password);
+  const handleSubmit = async (event) => {
     setValues({
       email: "",
       password: ""
     });
+
     //add login logic
-    hist("/register");
+    let result = await login(values.email, values.password);
+    if (result === "token") {
+      hist("/");
+    } else {
+      handleClick();
+    }
   };
 
   const handleBack = () => {
@@ -118,6 +146,16 @@ function Login() {
           </div>
         </div>
       </Box>
+      <Snackbar
+        anchorOrigin={{ vertical: "top", horizontal: "right" }}
+        open={open}
+        autoHideDuration={5000}
+        onClose={handleClose}
+      >
+        <Alert onClose={handleClose} severity="error" sx={{ width: "100%" }}>
+          check your information
+        </Alert>
+      </Snackbar>
     </div>
   );
 }

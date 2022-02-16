@@ -1,16 +1,18 @@
 import Search from "./Search";
 import ProfileCircle from "./ProfileCircle";
 import NavOptions from "./NavOptions";
+import { useAuth } from "../../../context/userContext";
 import { Link } from "react-router-dom";
 import "../../../App.css";
 
 function NavBar() {
+  const { currentUser } = useAuth();
   return (
     <div className="navbar">
       <p className="logo">TerminPro</p>
       <Search />
       <NavOptions />
-      {1 === 1 ? (
+      {currentUser.loggedIn ? (
         <ProfileCircle />
       ) : (
         <ul className="login-menu">
