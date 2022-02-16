@@ -1,48 +1,91 @@
-import logo from "./images/icons/arrow.png";
-import Avatar from "@mui/material/Avatar";
-import { styled } from "@mui/material/styles";
-import Badge from "@mui/material/Badge";
+import { useState } from "react";
+import {
+  Avatar,
+  Tooltip,
+  Menu,
+  MenuItem,
+  ListItemIcon,
+  Divider
+} from "@mui/material";
+import { Settings, Logout } from "@mui/icons-material";
 
 function ProfileCircle() {
-  const StyledBadge = styled(Badge)(({ theme }) => ({
-    "& .MuiBadge-badge": {
-      backgroundColor: "#44b700",
-      color: "#44b700",
-      boxShadow: `0 0 0 2px ${theme.palette.background.paper}`,
-      "&::after": {
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100%",
-        height: "100%",
-        borderRadius: "50%",
-        animation: "ripple 1.2s infinite ease-in-out",
-        border: "1px solid currentColor",
-        content: '""',
-      },
-    },
-    "@keyframes ripple": {
-      "0%": {
-        transform: "scale(.8)",
-        opacity: 1,
-      },
-      "100%": {
-        transform: "scale(2.4)",
-        opacity: 0,
-      },
-    },
-  }));
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    console.log(event.currentTarget);
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
 
   return (
     <div className="profile-circle-container">
-      <StyledBadge
-        overlap="circular"
-        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-        variant="dot"
+      <Tooltip title="account setting">
+        <Avatar
+          onClick={handleClick}
+          aria-controls={open ? "account-menu" : undefined}
+          aria-haspopup="true"
+          aria-expanded={open ? "true" : undefined}
+        />
+      </Tooltip>
+      <Menu
+        anchorEl={anchorEl}
+        id="account-menu"
+        keepMounted
+        open={open}
+        onClick={handleClose}
+        onClose={handleClose}
+        PaperProps={{
+          elevation: 12,
+          sx: {
+            overflow: "visible",
+            filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
+            mt: 1.5,
+            "& .MuiAvatar-root": {
+              width: 32,
+              height: 32,
+              ml: -0.5,
+              mr: 1
+            },
+            "&:before": {
+              content: '""',
+              display: "block",
+              position: "absolute",
+              top: 0,
+              right: 14,
+              width: 10,
+              height: 10,
+              bgcolor: "background.paper",
+              transform: "translateY(-50%) rotate(45deg)",
+              zIndex: 2
+            }
+          }
+        }}
+        transformOrigin={{ horizontal: "right", vertical: "top" }}
+        anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
-        <Avatar sx={{ bgcolor: "blue" }}>SS</Avatar>
-      </StyledBadge>
-      <img className="profile-circle-arrow" src={logo} alt="arrow" />
+        <MenuItem>
+          <ListItemIcon>
+            <Avatar />
+          </ListItemIcon>
+          Profile
+        </MenuItem>
+        <Divider />
+        <MenuItem>
+          <ListItemIcon>
+            <Settings />
+          </ListItemIcon>
+          Settings
+        </MenuItem>
+        <MenuItem>
+          <ListItemIcon>
+            <Logout />
+          </ListItemIcon>
+          Logout
+        </MenuItem>
+      </Menu>
     </div>
   );
 }

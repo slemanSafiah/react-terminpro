@@ -10,7 +10,7 @@ function NavBar() {
       <p className="logo">TerminPro</p>
       <Search />
       <NavOptions />
-      {1 == !1 ? (
+      {1 === 1 ? (
         <ProfileCircle />
       ) : (
         <ul className="login-menu">
